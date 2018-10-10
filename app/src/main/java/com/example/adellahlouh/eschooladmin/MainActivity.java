@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Hello Adel
+
         btn_login = findViewById(R.id.btn_login);
         edt_email = findViewById(R.id.edt_Email);
         edt_password = findViewById(R.id.edt_Pass);
