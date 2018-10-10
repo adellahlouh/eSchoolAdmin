@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edt_Email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="131dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:hint="Enter your Email"
+        android:inputType="textEmailAddress"
+        />
+
+    <TextView
+        android:id="@+id/txt_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="195dp"
+        android:text="Check your Email or Password"
+        android:textColor="#d70000"
+        android:visibility="gone"
+        android:layout_marginLeft="16dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="16dp" />
+
+    <EditText
+        android:id="@+id/edt_Pass"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="228dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:hint="Enter your Password"
+        android:inputType="textPassword"
+        />
+
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="111dp"
+        android:textSize="17sp"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:textColor="#ffffff"
+        android:background="#262954"
+        android:text="Login"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"/>
+
+
+</RelativeLayout>
