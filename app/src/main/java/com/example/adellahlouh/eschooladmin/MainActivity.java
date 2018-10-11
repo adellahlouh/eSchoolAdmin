@@ -16,9 +16,6 @@ public class MainActivity extends AppCompatActivity {
     EditText edt_email, edt_password;
     TextView txt_check;
 
-
-// hjghjgdjghkgfjfjhghfgjvjhj
-    //gyhgjhghjghjghjgjghj
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

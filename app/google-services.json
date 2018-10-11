@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "273291223387",
+    "firebase_url": "https://eschooladmin-2f828.firebaseio.com",
+    "project_id": "eschooladmin-2f828",
+    "storage_bucket": "eschooladmin-2f828.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273291223387:android:15b4c66413485671",
+        "android_client_info": {
+          "package_name": "com.example.adellahlouh.eschooladmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273291223387-pif71r960dq3gm48tk3msgq0cotptmr4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.adellahlouh.eschooladmin",
+            "certificate_hash": "b38682cbcd3ccbefa8c97b27eabc3fde6c0b0c7f"
+          }
+        },
+        {
+          "client_id": "273291223387-udeka18oijpnjl8j6iqt7v5k5r6ajape.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHP_5TudO10D3N3cuI2RIJG3SRjeDPG2k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273291223387-udeka18oijpnjl8j6iqt7v5k5r6ajape.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
