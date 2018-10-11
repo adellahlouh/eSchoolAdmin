@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         btn_login = findViewById(R.id.btn_login);
         edt_email = findViewById(R.id.edt_Email);
         edt_password = findViewById(R.id.edt_Pass);
-        txt_check = findViewById(R.id.txt_check);
+      //  txt_check = findViewById(R.id.txt_check);
 
       /*  btn_login.setOnClickListener(v -> {
 
