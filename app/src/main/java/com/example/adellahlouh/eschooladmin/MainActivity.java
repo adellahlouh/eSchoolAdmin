@@ -1,11 +1,13 @@
 package com.example.adellahlouh.eschooladmin;
 
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,21 +18,25 @@ public class MainActivity extends AppCompatActivity {
     EditText edt_email, edt_password;
     TextView txt_check;
 
+    private TextInputLayout textInputEmail;
+    private TextInputLayout textInputPassword;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-        //jdjdjdjdjjdghgfdfds
+        textInputEmail = (TextInputLayout) findViewById(R.id.text_input_email);
+        textInputPassword = (TextInputLayout) findViewById(R.id.text_input_password);
 
         btn_login = findViewById(R.id.btn_login);
         edt_email = findViewById(R.id.edt_Email);
         edt_password = findViewById(R.id.edt_Pass);
         txt_check = findViewById(R.id.txt_check);
 
-
-        btn_login.setOnClickListener(v -> {
+      /*  btn_login.setOnClickListener(v -> {
 
             String validemail = "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
 
@@ -61,7 +67,45 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+*/
 
+    }
+
+    private boolean ValidateEmail() {
+        String emailInput = textInputEmail.getEditText().getText().toString().trim();
+
+        if (emailInput.isEmpty()) {
+            textInputEmail.setError("Field can't be empty");
+            return false;
+        } else {
+            textInputEmail.setError(null);
+            //textInputEmail.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private boolean ValidatePassword() {
+        String passwordInput = textInputPassword.getEditText().getText().toString().trim();
+
+        if (passwordInput.isEmpty()) {
+            textInputPassword.setError("Field can't be empty");
+            return false;
+        } else {
+            textInputPassword.setError(null);
+            return true;
+        }
+
+    }
+
+
+    public void Login_Btn(View v)
+    {
+
+        if (!ValidateEmail()||!ValidatePassword())
+        {
+            return;
+        }
+        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
 
     }
 }
