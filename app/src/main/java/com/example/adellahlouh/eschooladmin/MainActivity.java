@@ -17,13 +17,8 @@ public class MainActivity extends AppCompatActivity {
     TextView txt_check;
 
 
-//fuck you adel
-
-///////////
-    ///////////
-    //////////
-    //////////
-    //////////////////
+// hjghjgdjghkgfjfjhghfgjvjhj
+    //gyhgjhghjghjghjgjghj
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
