@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             return false;
         } else {
             textInputEmail.setError(null);
-            //textInputEmail.setErrorEnabled(false);
+            textInputEmail.setErrorEnabled(false);
             return true;
         }
     }
