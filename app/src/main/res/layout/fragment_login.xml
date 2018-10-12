@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterAdmin.LoginFragment">
+
+
+    <EditText
+        android:id="@+id/edt_Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="118dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+
+    <EditText
+        android:id="@+id/edt_Pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="188dp"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/btn_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp"
+        android:visibility="gone"/>
+
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="217dp"
+        android:background="#262954"
+        android:text="Login"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="17sp"
+        android:textStyle="italic" />
+
+
+
+</RelativeLayout>
