@@ -6,11 +6,17 @@
     android:orientation="vertical"
     android:background="#ffffff"
     android:padding="16dp">
+    tools:context=".HomeActivity"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    >
+
 
     <FrameLayout
         android:id="@+id/contentFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
 
         />
 

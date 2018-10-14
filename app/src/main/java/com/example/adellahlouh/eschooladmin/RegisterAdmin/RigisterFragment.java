@@ -1,17 +1,20 @@
 package com.example.adellahlouh.eschooladmin.RegisterAdmin;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
 
-import com.example.adellahlouh.eschooladmin.AdapterRigister.RecyclerAdapterRigister;
+import com.example.adellahlouh.eschooladmin.FirebaseKey.SchoolKey;
 import com.example.adellahlouh.eschooladmin.R;
+import com.firebase.client.Firebase;
+
+import java.util.Objects;
 
 
 public class RigisterFragment extends Fragment {
@@ -25,10 +28,18 @@ public class RigisterFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    RecyclerView mRecyclerView ;
-    RecyclerView.LayoutManager layoutManager ;
-    RecyclerView.Adapter adapter ;
-    Context context ;
+    Button btn_name_school;
+    EditText edt_name_school, edt_name_location;
+    ProgressBar prog_name_school;
+
+    Firebase mRoot;
+
+    String nameLocation, nameSchool;
+
+    SchoolKey mSchoolKey;
+//    RecyclerView mRecyclerView ;
+//    RecyclerView.LayoutManager layoutManager ;
+//    RecyclerView.Adapter adapter ;
 
 
 
@@ -54,11 +65,9 @@ public class RigisterFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        Firebase.setAndroidContext(Objects.requireNonNull(getContext()));
 
-
-
-
-
+        mRoot = new Firebase("https://eschooladmin-2f828.firebaseio.com/Admin/School/Location");
 
     }
 
@@ -68,16 +77,34 @@ public class RigisterFragment extends Fragment {
 
         View view= inflater.inflate(R.layout.fragment_rigister, container, false);
 
-        mRecyclerView = view.findViewById(R.id.recycler_view_rigister);
+//        mRecyclerView = view.findViewById(R.id.recycler_view_rigister);
+//
+//        layoutManager = new LinearLayoutManager(getContext());
+//        mRecyclerView.setLayoutManager(layoutManager);
+//        adapter = new RecyclerAdapterRigister() ;
+//        mRecyclerView.setAdapter(adapter);
 
-        layoutManager = new LinearLayoutManager(getContext());
-        mRecyclerView.setLayoutManager(layoutManager);
-        adapter = new RecyclerAdapterRigister() ;
-        mRecyclerView.setAdapter(adapter);
+        edt_name_school = view.findViewById(R.id.edt_name_school);
+        btn_name_school = view.findViewById(R.id.btn_name_school);
+        prog_name_school = view.findViewById(R.id.prog_name_school);
+        edt_name_location = view.findViewById(R.id.edt_name_location);
+
+        mSchoolKey = new SchoolKey();
 
 
+        btn_name_school.setOnClickListener(v -> {
 
-        return view ;
+
+            nameLocation = edt_name_location.getText().toString();
+            nameSchool = edt_name_school.getText().toString();
+
+            if (nameLocation.equals("Irbid")) {
+                mSchoolKey.setSchoolKeyIrbid(nameSchool);
+            } else if (nameLocation.equals("Amman")) {
+                mSchoolKey.setSchoolKeyAmman(nameSchool);
+            }
+        });
+        return view;
     }
 
     public void onButtonPressed(Uri uri) {
