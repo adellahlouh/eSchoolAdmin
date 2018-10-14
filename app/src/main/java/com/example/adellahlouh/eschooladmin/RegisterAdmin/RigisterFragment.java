@@ -2,12 +2,12 @@ package com.example.adellahlouh.eschooladmin.RegisterAdmin;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 
 import com.example.adellahlouh.eschooladmin.FirebaseKey.SchoolKey;
@@ -29,12 +29,16 @@ public class RigisterFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     Button btn_name_school;
-    EditText edt_name_school, edt_name_location;
     ProgressBar prog_name_school;
 
     Firebase mRoot;
 
-    String nameLocation, nameSchool;
+    String nameLocation, nameSchool, location, arrayData;
+
+    TextInputEditText edt_name_school, edt_name_location, edt_full_name, edt_major, edt_id, edt_birth, edt_age, edt_phone;
+
+
+
 
     SchoolKey mSchoolKey;
 //    RecyclerView mRecyclerView ;
@@ -69,6 +73,7 @@ public class RigisterFragment extends Fragment {
 
         mRoot = new Firebase("https://eschooladmin-2f828.firebaseio.com/Admin/School/Location");
 
+
     }
 
     @Override
@@ -77,35 +82,59 @@ public class RigisterFragment extends Fragment {
 
         View view= inflater.inflate(R.layout.fragment_rigister, container, false);
 
-//        mRecyclerView = view.findViewById(R.id.recycler_view_rigister);
-//
-//        layoutManager = new LinearLayoutManager(getContext());
-//        mRecyclerView.setLayoutManager(layoutManager);
-//        adapter = new RecyclerAdapterRigister() ;
-//        mRecyclerView.setAdapter(adapter);
+
 
         edt_name_school = view.findViewById(R.id.edt_name_school);
         btn_name_school = view.findViewById(R.id.btn_name_school);
         prog_name_school = view.findViewById(R.id.prog_name_school);
         edt_name_location = view.findViewById(R.id.edt_name_location);
+        edt_full_name = view.findViewById(R.id.edt_txt_full_name);
+        edt_major = view.findViewById(R.id.edt_major);
+        edt_id = view.findViewById(R.id.edt_id);
+        edt_birth = view.findViewById(R.id.edt_txt_birth);
+        edt_age = view.findViewById(R.id.edt_age);
+        edt_phone = view.findViewById(R.id.edt_phone);
+
+
 
         mSchoolKey = new SchoolKey();
 
 
         btn_name_school.setOnClickListener(v -> {
 
+            prog_name_school.setVisibility(View.VISIBLE);
 
             nameLocation = edt_name_location.getText().toString();
             nameSchool = edt_name_school.getText().toString();
 
+
             if (nameLocation.equals("Irbid")) {
-                mSchoolKey.setSchoolKeyIrbid(nameSchool);
+                location = "Irbid";
+                mSchoolKey.setSchoolKey(nameSchool, location
+                        , edt_full_name.getText().toString()
+                        , edt_major.getText().toString()
+                        , edt_id.getText().toString()
+                        , edt_birth.getText().toString()
+                        , edt_age.getText().toString()
+                        , edt_phone.getText().toString());
+
+
             } else if (nameLocation.equals("Amman")) {
-                mSchoolKey.setSchoolKeyAmman(nameSchool);
+                location = "Amman";
+                mSchoolKey.setSchoolKey(nameSchool, location
+                        , edt_full_name.getText().toString()
+                        , edt_major.getText().toString()
+                        , edt_id.getText().toString()
+                        , edt_birth.getText().toString()
+                        , edt_age.getText().toString()
+                        , edt_phone.getText().toString());
             }
+
+
         });
         return view;
     }
+
 
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -126,3 +155,9 @@ public class RigisterFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 }
+//        mRecyclerView = view.findViewById(R.id.recycler_view_rigister);
+//
+//        layoutManager = new LinearLayoutManager(getContext());
+//        mRecyclerView.setLayoutManager(layoutManager);
+//        adapter = new RecyclerAdapterRigister() ;
+//        mRecyclerView.setAdapter(adapter);000

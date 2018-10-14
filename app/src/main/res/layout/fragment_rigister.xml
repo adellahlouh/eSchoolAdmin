@@ -2,81 +2,36 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     >
 
-
-    <TextView
-        android:id="@+id/txt_location_school"
+    <include
+        layout="@layout/register_manager_layout"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="39dp"
-        android:text="Enter name school"
-        android:textAlignment="center"
-        android:textColor="@color/colorTxt"
-        android:textSize="20sp" />
+        android:layout_marginTop="16dp" />
 
-
-    <EditText
-
-        android:id="@+id/edt_name_location"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-
-        android:layout_marginTop="104dp" />
-
-
-    <TextView
-        android:id="@+id/txt_name_school"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="181dp"
-        android:text="Enter name school"
-        android:textAlignment="center"
-        android:textColor="@color/colorTxt"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/edt_name_school"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="240dp" />
 
     <ProgressBar
         android:id="@+id/prog_name_school"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignParentTop="true"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="332dp" />
+        android:layout_marginTop="332dp"
+        android:layout_marginBottom="49dp"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/btn_name_school"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="157dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="80dp"
         android:text="Register school"
-        android:textColor="@color/colorTxt"
+        android:background="#2c3346"
+        android:textColor="#FFFFFF"
         android:textSize="20sp" />
 
 
